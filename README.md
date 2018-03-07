@@ -5,12 +5,12 @@ The following readme file includes all information regarding the requirements an
 working of the desktop oraginzer program.
 It also includes some variations to clean any directory
 
-Requirements:
+# Requirements:
 
 1. A linux/unix operating system with bash/shell (ubuntu/fedora/mint/debian/macos/etc)
 2. g++ compiler to run c++ file (version 6.4.x or above)
 
-Files in the project:
+# Files in the project:
 
 1. README.txt - The documentation of everything related to the infrastructure engineering challenge.
 2. deskorg.cpp - An efficient c++ code to search for all the files on the desktop
@@ -18,7 +18,7 @@ Files in the project:
 4. allformats.txt - Details of all image,video,music,etc formats to search.
 5. deskorg - An executble file
 
-How to run:
+# How to run:
 
 Step 1: Extract the zip file on desktop or any folder.
 Step 2: Open terminal and change the directory to desktop_organizer folder
@@ -27,12 +27,12 @@ Step 3: Run the command "./deskorg.sh"
 Observe the desktop and documents folder. All files of particular format have been moved to 
 documents in their respective folders.
   
-Working:
+# Working:
 
-Aim - The aim of the challenge was to organize all the scattered files such as documents,videos,images on the desktop
+__Aim__ - The aim of the challenge was to organize all the scattered files such as documents,videos,images on the desktop
 	  in documents folder creating seperate folders for each type of file.
 	  
-How it works - The task is divided into two parts,
+__How it works__ - The task is divided into two parts,
 
 			   --> A c++ code which efficiently searches for the files on the desktop folder non-recursively
 			       (recursively in variation section).
@@ -40,12 +40,12 @@ How it works - The task is divided into two parts,
 			   --> A shell script to actually move the files to the specific folder in the documents directory.
 				   
 			
-******** Working of C++ Code (deskorg.cpp) *********
+# Working of C++ Code (deskorg.cpp) 
 
 Note: A lot of data structures are used to maintain the space and time effciency of the program.
 	  Each data structure is mentioned with its usage in the code.
 
-# Data Structures
+__Data Structures__
 	  
 --> filelist[] -  We have initially declared a global array of vector of pair (a 2D dynamic array with 2 fields)
 				  a string and an long integer. It stores the name of the files along with their size.
@@ -58,20 +58,20 @@ Note: A lot of data structures are used to maintain the space and time effciency
 			 For eg. 1 is mapped to video, 2 is mapped to photos ,etc.
 			 
 
->>> Format storing (Line 84 to Line 88)
+__Format storing (Line 84 to Line 88)__
 
 We are storing all the file formats corresponding to its type by taking input from a file (allformats.txt). 
 Taking input from the file is beneficial in this situation as it allows easy updation of any new file format.
 Just by updating the text file it allows us to segregate yet another file format form your desktop (further in format of files).
 
-# Path building (Line 94 to Line 97)
+__Path building (Line 94 to Line 97)__
 
 Declaring four string variables for setting paths for different locations used in the code below.
 One of the most important path variable is the home varible which allows to retrieve the home path of the system.
 It frees the constraint of changing the path of home for every new system which would run this project, as it automatically
 detects the home path and stores in the string home.
 
-# Searching (Line 104 to Line 104 and Line 17 to Line 52)
+__Searching (Line 104 to Line 104 and Line 17 to Line 52)__
 
 This part includes the function call to search function. Which demands three parameters- directory name , sizelist(call by reference)
 ,flag.
@@ -89,7 +89,7 @@ As dynamic array takes O(1) to insert,
 
 Time Complexity: O(numeber_of_files) ~ O(n)
 
-# Filtering (Line 127 and Line 54 to Line 72)
+__Filtering (Line 127 and Line 54 to Line 72)__
 			 
 This part is the function call to filter function which basically filters all the files based on their type and 
 according to their format ans stores them into the main list (filelist[]).
@@ -112,24 +112,22 @@ Let the number of files be n.
 
 Time Complexity: O( 4 * n * log(n) ). Note: Here we can neglect the log(n) factor of the map as it is negligible.
 
-# Larefile generation (Line 106 to Line 119)
+__Larefile generation (Line 106 to Line 119)__
 
 In this part a text file largefile.txt is generated which has the information of top 10 largest file in the home directory 
 It uses the recursive search to search for all the files in every directory.
 
-# Logfile generation (Line 129 to Line 147)
+__Logfile generation (Line 129 to Line 147)__
 
 This part of code generates a filelog.txt which includes the information of all the files which are being moved
 from the desktop along with their sizes and total sizes of all documents.
 
-# InformationFile Generation (Line 151 to Line 161)
+__InformationFile Generation (Line 151 to Line 161)__
 			 
 A fileinfo.txt is generated which has the names of the files to be moved but not their sizes. Their format is specific so that
 the shell script can interpret the file and run the move operations accordingly toeach specific folder.
 
-************************************ END ************************************************
-
-************* Working of the shell script (deskorg.sh) **********************************
+# Working of the shell script (deskorg.sh)
 
 Shell script in the beginning compiles and runs the above c++ file (deskorg.cpp). Which intern generates the filelog.txt
 and fileinfo.txt. 
@@ -140,9 +138,7 @@ filename variable (address of fileinfo.txt).
 It is followed by a loop which reads the text file line by line and processes the files into the their respective folder with
 the help of the infrastructure of the fileinfo.txt file and mv (move) command to move the files to the desired location.
 
-*********************************** END **************************************************
-
-Formats of Files:
+# Formats of Files:
 
 Formats are very important in this task. You need to know what type of files you use on a daily basis and what are their formats.
 We tend to download an external file from the internet genrally on our desktops. So there can be varying and a large number of files.
