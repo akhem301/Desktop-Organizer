@@ -45,7 +45,7 @@ How it works - The task is divided into two parts,
 Note: A lot of data structures are used to maintain the space and time effciency of the program.
 	  Each data structure is mentioned with its usage in the code.
 
->>> Data Structures
+# Data Structures
 	  
 --> filelist[] -  We have initially declared a global array of vector of pair (a 2D dynamic array with 2 fields)
 				  a string and an long integer. It stores the name of the files along with their size.
@@ -64,14 +64,14 @@ We are storing all the file formats corresponding to its type by taking input fr
 Taking input from the file is beneficial in this situation as it allows easy updation of any new file format.
 Just by updating the text file it allows us to segregate yet another file format form your desktop (further in format of files).
 
->>> Path building (Line 94 to Line 97)
+# Path building (Line 94 to Line 97)
 
 Declaring four string variables for setting paths for different locations used in the code below.
 One of the most important path variable is the home varible which allows to retrieve the home path of the system.
 It frees the constraint of changing the path of home for every new system which would run this project, as it automatically
 detects the home path and stores in the string home.
 
->>> Searching (Line 104 to Line 104 and Line 17 to Line 52)
+# Searching (Line 104 to Line 104 and Line 17 to Line 52)
 
 This part includes the function call to search function. Which demands three parameters- directory name , sizelist(call by reference)
 ,flag.
@@ -87,9 +87,9 @@ But if it encounters a directory it does not recusrsively search for the directo
 
 As dynamic array takes O(1) to insert,
 
-Time Complexity: O(numeber_of_files)
+Time Complexity: O(numeber_of_files) ~ O(n)
 
->>> Filtering (Line 105 and Line 54 to Line 72)
+# Filtering (Line 127 and Line 54 to Line 72)
 			 
 This part is the function call to filter function which basically filters all the files based on their type and 
 according to their format ans stores them into the main list (filelist[]).
@@ -112,12 +112,17 @@ Let the number of files be n.
 
 Time Complexity: O( 4 * n * log(n) ). Note: Here we can neglect the log(n) factor of the map as it is negligible.
 
->>> Logfile generation (Line 107 to Line 125)
+# Larefile generation (Line 106 to Line 119)
+
+In this part a text file largefile.txt is generated which has the information of top 10 largest file in the home directory 
+It uses the recursive search to search for all the files in every directory.
+
+# Logfile generation (Line 129 to Line 147)
 
 This part of code generates a filelog.txt which includes the information of all the files which are being moved
 from the desktop along with their sizes and total sizes of all documents.
 
->>> InformationFile Generation (Line 129 to Line 139)
+# InformationFile Generation (Line 151 to Line 161)
 			 
 A fileinfo.txt is generated which has the names of the files to be moved but not their sizes. Their format is specific so that
 the shell script can interpret the file and run the move operations accordingly toeach specific folder.
@@ -147,21 +152,21 @@ If we would have har coded the formats in the cpp file then it would be very dif
 add the format further.
 By taking input from a file it makes it very easy to add the format in the text file.
 
-+-----------------------+
-|___Type___|__Code______|
-|          |	        |
-|  Video   |	  1     |
-|  Photo   |	  2     |
-|  Doc     |	  3     |
-|  Zip	   |	  4     |
-|  Music   |      5     |
-+-----------------------+
-
++-----------------------+                                                                               
+|___Type___|____Code____|                                                                               	
+|          |            |                                                                                   
+|  Video   |      1     |                                                                                     
+|  Photo   |      2     |                                                                               
+|  Doc     |      3     |                                                                               
+|  Zip     |      4     |                                                                                   
+|  Music   |      5     |                                                                                
++-----------------------+                                                                               
+								
 To insert a particular format in the allformats.txt file.
 
---> Identify the type of extension 
---> Get the number code of the type from the above table
---> Insert the format as "format code".
+--> Identify the type of extension                                                               
+--> Get the number code of the type from the above table                                                   
+--> Insert the format as "format code".                                                
 
 For eg. mkv is a video type extension.
 Video has the number code 1.
