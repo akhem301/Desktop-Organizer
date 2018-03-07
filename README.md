@@ -152,15 +152,12 @@ If we would have har coded the formats in the cpp file then it would be very dif
 add the format further.
 By taking input from a file it makes it very easy to add the format in the text file.
 
-+-----------------------+                                                                               
-|___Type___|____Code____|                                                                               	
-|          |            |                                                                                   
-|  Video   |      1     |                                                                                     
-|  Photo   |      2     |                                                                               
-|  Doc     |      3     |                                                                               
-|  Zip     |      4     |                                                                                   
-|  Music   |      5     |                                                                                
-+-----------------------+                                                                               
+__Type ---> Code                                                                                
+Video ---> 1                                                                                     
+Photo ---> 2                                                                                  
+Docs ----> 3                                                                               
+Zip ------> 4                                                                                
+Music ---> 5__                                                                           
 								
 To insert a particular format in the allformats.txt file.
 
