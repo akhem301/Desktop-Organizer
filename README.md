@@ -20,9 +20,9 @@ It also includes some variations to clean any directory
 
 # How to run:
 
-Step 1: Extract the zip file on desktop or any folder.
-Step 2: Open terminal and change the directory to desktop_organizer folder
-Step 3: Run the command "./deskorg.sh"
+__Step 1: Extract the zip file on desktop.                                                     
+Step 2: Open terminal and change the directory to desktop_organizer folder                                                   
+Step 3: Run the command "./deskorg.sh"__                                                                                                  
 
 Observe the desktop and documents folder. All files of particular format have been moved to 
 documents in their respective folders.
